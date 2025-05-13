@@ -16,3 +16,5 @@ Paper beats Rock
 
 # How to play?
 It's a console game. The user input is via prompt and the result appears in console.
+
+[link](https://bgns42.github.io/rockPaperAndScissors)
