@@ -13,3 +13,6 @@ Compare Computer choice and User choice
 Rock beats Scissors
 Scissors beats Paper
 Paper beats Rock
+
+# How to play?
+It's a console game. The user input is via prompt and the result appears in console.
