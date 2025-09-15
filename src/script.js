@@ -78,18 +78,22 @@ function playRound(humanChoice, cpuChoice) {
 }
 
 // Game logic 
-function playGame() {
-    for(let i = 0; i < 5; i++) {
-        let userSelection = getHumanChoice();
-        let cpuSelection = getComputerChoice();
-        console.log(`Resultado: ${playRound(userSelection, cpuSelection)}.`);
-        console.log(`Human: ${humanScore} e CPU: ${cpuScore}`);
-    }
 
-    console.log(`Final result:
-        Human: ${humanScore}
-        CPU: ${cpuScore}`);
-}
+// function playGame() {
+//     for(let i = 0; i < 5; i++) {
+//         let userSelection = getHumanChoice();
+//         let cpuSelection = getComputerChoice();
+//         console.log(`Resultado: ${playRound(userSelection, cpuSelection)}.`);
+//         console.log(`Human: ${humanScore} e CPU: ${cpuScore}`);
+//     }
+
+//     console.log(`Final result:
+//         Human: ${humanScore}
+//         CPU: ${cpuScore}`);
+// }
+
+
+// new UI logic
 
 // Game execution
 playGame();
