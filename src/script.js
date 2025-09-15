@@ -1,5 +1,6 @@
 // Game will be played against computer.
 
+
 // The computer generate a random value between Rock, Paper or Scissors
 
 // User choose between Rock, Paper and Scissors
@@ -94,6 +95,32 @@ function playRound(humanChoice, cpuChoice) {
 
 
 // new UI logic
+
+const btn = document.querySelector("#game");
+let userSelection = "";
+
+btn.addEventListener("click", (e) => {
+    //console.log(e);
+    const cpuSelection = getComputerChoice();
+    switch (e.srcElement.className) {
+        case "btnR":
+            userSelection = "rock";
+            console.log(userSelection);
+            break;
+        case "btnP":
+            userSelection = "paper";
+            console.log(userSelection)
+            break;
+        case "btnS":
+            userSelection = "scissors";
+            console.log(userSelection)
+            break;
+        default:
+            break;
+    };
+    const result = playRound(userSelection,cpuSelection);
+    console.log(result + " cpu: " + cpuSelection);
+});
 
 // Game execution
 playGame();
