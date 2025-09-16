@@ -41,19 +41,19 @@ let humanScore = 0;
 // Round logic
 function playRound(humanChoice, cpuChoice) {
     if(humanChoice === cpuChoice) {
-        return `Tied! Both of you choose ${humanChoice}`
-    }
+        return `Tied! Both of you choose ${humanChoice}`;
+    };
 
     if(humanChoice === "rock") {
         if(cpuChoice === "paper") {
             cpuScore++;
             return `You loose! ${cpuChoice} beats ${humanChoice}`;
-        }
+        };
         if(cpuChoice === "scissors") {
             humanScore++;
-            return `You Won! ${humanChoice} beats ${cpuChoice}`
-        } 
-    }
+            return `You Won! ${humanChoice} beats ${cpuChoice}`;
+        }; 
+    };
 
     if(humanChoice === "paper") {
         if(cpuChoice === "scissors") {
@@ -62,21 +62,21 @@ function playRound(humanChoice, cpuChoice) {
         }
         if(cpuChoice === "rock") {
             humanScore++;
-            return `You Won! ${humanChoice} beats ${cpuChoice}`
-        } 
-    }
+            return `You Won! ${humanChoice} beats ${cpuChoice}`;
+        };
+    };
 
     if(humanChoice === "scissors") {
         if(cpuChoice === "rock") {
             cpuScore++;
             return `You loose! ${cpuChoice} beats ${humanChoice}`;
-        }
+        };
         if(cpuChoice === "paper") {
             humanScore++;
-            return `You Won! ${humanChoice} beats ${cpuChoice}`
-        } 
-    }
-}
+            return `You Won! ${humanChoice} beats ${cpuChoice}`;
+        };
+    };
+};
 
 // Game logic 
 
@@ -98,29 +98,65 @@ function playRound(humanChoice, cpuChoice) {
 
 const btn = document.querySelector("#game");
 let userSelection = "";
+const resultDiv = document.querySelector("#results");
+
 
 btn.addEventListener("click", (e) => {
     //console.log(e);
-    const cpuSelection = getComputerChoice();
     switch (e.srcElement.className) {
         case "btnR":
             userSelection = "rock";
-            console.log(userSelection);
+            //console.log(userSelection);
             break;
         case "btnP":
             userSelection = "paper";
-            console.log(userSelection)
+            //console.log(userSelection)
             break;
         case "btnS":
             userSelection = "scissors";
-            console.log(userSelection)
+            //console.log(userSelection)
             break;
         default:
             break;
     };
-    const result = playRound(userSelection,cpuSelection);
-    console.log(result + " cpu: " + cpuSelection);
+    playGame();
+                   
 });
+                
+function playGame() {
+    const cpuSelection = getComputerChoice();
+    const result = playRound(userSelection,cpuSelection);
+    //console.log(result + " cpu: " + cpuSelection);
+        
+    const resultText = document.createElement("p");
+
+    resultText.textContent = result;
+    
+    const cpuChoice = document.createElement("p");
+    cpuChoice.textContent = `Gamescore - You: ${humanScore}  CPU: ${cpuScore}.\n Cpu choice: ${cpuSelection}`;
+    
+    resultDiv.appendChild(cpuChoice);
+    resultDiv.appendChild(resultText);
+
+    checkScore(humanScore, cpuScore, resultText); 
+};
+
+function checkScore(humanScore, cpuScore, resultText) {
+    if (humanScore == 5) {
+        alert("You win!");
+        resultText.textContent = "";
+        location.reload();
+        humanScore = 0;
+        cpuScore = 0;
+    };
+    if (cpuScore == 5) {
+        alert("You lost!");
+        resultText.textContent = "";
+        location.reload();
+        humanScore = 0;
+        cpuScore = 0;
+    };
+}
 
 // Game execution
-playGame();
+//playGame();
