@@ -1,0 +1,44 @@
+/* Pre ajustes */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* overflow-x: hidden; */
+}
+
+body {
+    border: 2px dotted black;
+    margin: 50px;
+    
+}
+
+#btn {
+    border-radius: 8px;
+    border: 2px solid black;
+    font-size: x-large;
+    
+}
+
+#table {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    /* gap: 10px; */
+}
+
+#game {
+
+}
+
+.gameBoard {
+    /* border: 2px solid green; */
+    /* gap: 10px; */
+}
+
+.header {
+    /* margin-bottom: 100px; */
+}
