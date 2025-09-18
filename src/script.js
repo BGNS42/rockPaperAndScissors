@@ -26,10 +26,10 @@ function getComputerChoice() {
 
 
 // human choice logic
-function getHumanChoice() {
-    let userChoice = prompt("Choose: Rock, Paper or Scissors?");
-    return userChoice.toLowerCase();
-}
+// function getHumanChoice() {
+//     let userChoice = prompt("Choose: Rock, Paper or Scissors?");
+//     return userChoice.toLowerCase();
+// }
 
 // console.log(`Human Choice: ${getHumanChoice()}`);
 
@@ -157,6 +157,3 @@ function checkScore(humanScore, cpuScore, resultText) {
         cpuScore = 0;
     };
 }
-
-// Game execution
-//playGame();
